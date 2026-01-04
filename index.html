@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>FUSION BYTE | The Tech Architects</title>
+    <meta name="description" content="Fusion Byte is a premium agency crafting high-performance websites, game development, and SaaS tools like Agency OS.">
+    <meta name="keywords" content="Web Development, Game Dev, SaaS, Fusion Byte, Aniket Patil">
+    
+    <meta name="google-site-verification" content="PASTE_YOUR_GOOGLE_CONSOLE_CODE_HERE" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PASTE_YOUR_ID_HERE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PASTE_YOUR_ID_HERE'); 
+    </script>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'], tech: ['Space Grotesk', 'sans-serif'] },
+                    colors: { primary: '#0ea5e9', secondary: '#8b5cf6', dark: '#050505', surface: '#0f172a' },
+                    backgroundImage: { 'hero-pattern': "url('https://assets.codepen.io/1462889/pat-back.svg')" }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #050505; color: white; overflow-x: hidden; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0ea5e9; }
+        .text-gradient { background: linear-gradient(135deg, #0ea5e9 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); }
+        .btn-glow { position: relative; z-index: 1; overflow: hidden; transition: all 0.3s ease; }
+        .btn-glow:hover { box-shadow: 0 0 20px rgba(14, 165, 233, 0.5); transform: translateY(-2px); }
+        .input-field { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); color: white; transition: all 0.3s ease; }
+        .input-field:focus { border-color: #0ea5e9; box-shadow: 0 0 15px rgba(14, 165, 233, 0.2); outline: none; }
+        .link-btn { display: inline-flex; items-center: center; gap: 0.5rem; color: #0ea5e9; font-weight: 600; transition: all 0.3s; }
+        .link-btn:hover { gap: 0.8rem; color: #fff; }
+    </style>
+</head>
+<body class="antialiased font-sans">
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+
+       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAvfwubrdAuJeMb2H4lRPotsbvS4CEhgYk",
+  authDomain: "fusion-byte.firebaseapp.com",
+  projectId: "fusion-byte",
+  storageBucket: "fusion-byte.firebasestorage.app",
+  messagingSenderId: "1059120081400",
+  appId: "1:1059120081400:web:7065d59b4c4c08523fce0d",
+  measurementId: "G-45RH0B2EC7"
+};
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        console.log("Firebase Connected");
+    </script>
+
+    <nav class="fixed w-full z-50 glass border-b-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl group-hover:rotate-12 transition-transform">FB</div>
+                    <span class="text-2xl font-bold font-tech tracking-wider">FUSION<span class="text-primary">BYTE</span></span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-primary hover:scale-105 transition text-sm font-bold border-b-2 border-primary">HOME</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white hover:scale-105 transition text-sm font-medium">ABOUT</a>
+                    <a href="services.html" class="text-gray-300 hover:text-white hover:scale-105 transition text-sm font-medium">SERVICES</a>
+                    <a href="products.html" class="text-gray-300 hover:text-white hover:scale-105 transition text-sm font-medium">PRODUCT</a>
+                    <a href="#contact" class="px-6 py-2 rounded-full bg-white text-dark font-bold hover:bg-primary hover:text-white transition shadow-lg btn-glow">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[100px] animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] animate-pulse" style="animation-delay: 2s"></div>
+
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10" data-aos="zoom-in" data-aos-duration="1200">
+            <div class="inline-block mb-4 px-4 py-1 rounded-full glass border border-primary/30 text-primary text-xs font-bold tracking-widest uppercase">🚀 Welcome to the Future</div>
+            <h1 class="text-6xl md:text-8xl font-extrabold font-tech tracking-tight mb-6 leading-tight">WE BUILD <br> <span class="text-gradient">DIGITAL EMPIRES</span></h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10 font-light">Fusion Byte is a premium agency crafting high-performance websites and next-gen software tools like <b>Agency OS</b>.</p>
+            <div class="flex flex-col md:flex-row gap-5 justify-center">
+                <a href="products.html" class="btn-glow px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg shadow-lg shadow-primary/25">Explore Software</a>
+                <a href="#contact" class="px-8 py-4 rounded-xl glass border border-white/10 hover:bg-white/5 transition text-white font-bold text-lg">Start Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-surface/30 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-primary font-bold tracking-wider mb-2 uppercase text-sm">Who We Are</h2>
+                <h3 class="text-4xl md:text-5xl font-bold mb-6">More Than Just Code. <br> We Are <span class="text-white">Visionaries.</span></h3>
+                <p class="text-gray-400 mb-6 leading-relaxed">Founded by <b>Aniket Patil</b>, Fusion Byte bridges the gap between complex technology and user-friendly experiences. We don't just deliver projects; we deliver "Dhanda" (Business) growth.</p>
+                <a href="about.html" class="link-btn text-lg mt-2">About us <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="grid grid-cols-2 gap-6 mt-8">
+                    <div class="glass p-4 rounded-lg text-center"><h4 class="text-3xl font-bold text-white">10+</h4><p class="text-sm text-gray-500">Projects Done</p></div>
+                    <div class="glass p-4 rounded-lg text-center"><h4 class="text-3xl font-bold text-white">100%</h4><p class="text-sm text-gray-500">Client Satisfaction</p></div>
+                </div>
+            </div>
+            <div class="relative" data-aos="fade-left">
+                <div class="glass p-8 rounded-2xl relative border border-white/10 transform rotate-3 hover:rotate-0 transition duration-500">
+                    <div class="flex items-center gap-2 mb-4"><div class="w-3 h-3 rounded-full bg-red-500"></div><div class="w-3 h-3 rounded-full bg-yellow-500"></div><div class="w-3 h-3 rounded-full bg-green-500"></div></div>
+                    <code class="text-sm text-gray-300 font-mono"><span class="text-secondary">const</span> <span class="text-yellow-300">FusionByte</span> = () => {<br>&nbsp;&nbsp;<span class="text-secondary">return</span> (<br>&nbsp;&nbsp;&nbsp;&nbsp;<<span class="text-primary">Success</span> type="guaranteed" /><br>&nbsp;&nbsp;);<br>}</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4">Our <span class="text-gradient">Powerhouse</span></h2>
+                <p class="text-gray-400">Whatever your business needs, we engineer it.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="glass p-8 rounded-2xl hover:bg-white/5 transition group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center text-2xl text-primary mb-6 group-hover:scale-110 transition">💻</div>
+                    <h3 class="text-xl font-bold mb-3">Custom Web Dev</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">React, Next.js, and Tailwind based ultra-fast websites.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl hover:bg-white/5 transition group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center text-2xl text-purple-400 mb-6 group-hover:scale-110 transition">🎮</div>
+                    <h3 class="text-xl font-bold mb-3">Game Development</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Immersive experiences using Unity & Blender.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl hover:bg-white/5 transition group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center text-2xl text-pink-400 mb-6 group-hover:scale-110 transition">🚀</div>
+                    <h3 class="text-xl font-bold mb-3">SaaS Solutions</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Building scalable software products like Agency OS.</p>
+                </div>
+            </div>
+            <div class="text-center" data-aos="fade-up">
+                <a href="services.html" class="link-btn text-xl border border-white/10 px-6 py-3 rounded-full glass hover:bg-white/10">More Services <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="product" class="py-24 bg-gradient-to-b from-dark to-surface relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <div class="inline-block px-3 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded-full mb-4">AVAILABLE NOW</div>
+                    <h2 class="text-5xl font-bold font-tech mb-6">Agency OS <span class="text-gray-600 text-2xl align-top">v1.0</span></h2>
+                    <p class="text-gray-300 text-lg mb-8">The Ultimate Dashboard for Developers & Freelancers. Manage clients and track payments in one secured place.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-400"><i class="fa-solid fa-check text-primary mr-3"></i> Client Management System</li>
+                        <li class="flex items-center text-gray-400"><i class="fa-solid fa-check text-primary mr-3"></i> Project & Deadline Tracking</li>
+                        <li class="flex items-center text-gray-400"><i class="fa-solid fa-check text-primary mr-3"></i> Dark Mode UI</li>
+                    </ul>
+                    <button onclick="payNow()" class="btn-glow inline-block px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition cursor-pointer mb-4">Get Instant Access</button>
+                    <div class="mt-4"><a href="products.html" class="link-btn text-lg">More Product <i class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+
+                <div class="glass border-2 border-primary/50 p-8 rounded-3xl relative transform md:scale-105 shadow-2xl shadow-primary/20" data-aos="flip-right">
+                    <div class="absolute -top-6 -right-6 bg-red-600 text-white font-bold px-4 py-2 rounded-full shadow-lg shadow-red-600/50 z-20 animate-bounce">🔥 NEW YEAR SALE</div>
+                    <div class="absolute top-0 left-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-br-lg rounded-tl-2xl">BEST SELLER</div>
+                    <h3 class="text-gray-400 font-medium mb-1">Lifetime Access</h3>
+                    <p class="text-xs text-red-400 mb-4 font-bold tracking-widest uppercase">Valid: 1 Jan - 31 Jan Only</p>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-5xl font-bold text-white">₹799</span>
+                        <span class="relative ml-3 text-gray-500 text-xl">₹1999<div class="absolute top-1/2 left-0 w-full h-[2px] bg-red-500/80 rotate-[-15deg] transform"></div></span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-8 border-b border-white/10 pb-6">One time payment. Limited Time Offer for New Year.</p>
+                    <button onclick="payNow()" class="block text-center w-full mt-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-xl font-bold text-white hover:opacity-90 transition cursor-pointer">Buy Now @ ₹799</button>
+                    <p class="text-xs text-center text-gray-500 mt-4">Manual ID/Pass Delivery within 1 Hour</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="glass p-8 md:p-12 rounded-3xl border border-white/10" data-aos="fade-up">
+                <div class="text-center mb-10"><h2 class="text-3xl font-bold mb-2">Start a Project</h2><p class="text-gray-400">Fill the form, and Aniket (Admin) will contact you.</p></div>
+                <form action="#" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2"><label class="text-sm text-gray-400 ml-1">Full Name</label><input type="text" placeholder="John Doe" class="w-full p-4 rounded-xl input-field"></div>
+                        <div class="space-y-2"><label class="text-sm text-gray-400 ml-1">Email Address</label><input type="email" placeholder="john@example.com" class="w-full p-4 rounded-xl input-field"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm text-gray-400 ml-1">I am interested in</label>
+                        <select class="w-full p-4 rounded-xl input-field text-gray-300"><option class="bg-dark">Buying Agency OS (Software)</option><option class="bg-dark">Web Development Service</option><option class="bg-dark">Game Development</option><option class="bg-dark">Other</option></select>
+                    </div>
+                    <div class="space-y-2"><label class="text-sm text-gray-400 ml-1">Message</label><textarea rows="4" placeholder="Tell me about your requirements..." class="w-full p-4 rounded-xl input-field"></textarea></div>
+                    <button type="submit" class="w-full py-4 bg-white text-dark font-bold rounded-xl hover:bg-primary hover:text-white transition shadow-lg btn-glow">Send Enquiry 🚀</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 border-t border-white/5 bg-black text-center relative z-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-2xl font-bold font-tech mb-4">FUSION <span class="text-primary">BYTE</span></h2>
+            <div class="flex justify-center gap-6 mb-6">
+                <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <p class="text-gray-600 text-sm">&copy; 2026 Fusion Byte. Built with ❤️ by Aniket.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) { navbar.classList.add('shadow-lg'); navbar.classList.replace('bg-transparent', 'glass'); }
+        });
+
+        // 4. RAZORPAY KEY HERE (Is function me key paste kar)
+        function payNow() {
+            var options = {
+                "key": "rzp_test_YOUR_ACTUAL_KEY_HERE", // 🔥 PASTE KEY HERE
+                "amount": "79900", // ₹799
+                "currency": "INR",
+                "name": "Fusion Byte",
+                "description": "Agency OS - New Year Sale Offer",
+                "image": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+                "handler": function (response){
+                    alert("Payment Success! Redirecting to Dashboard...");
+                    window.location.href = "https://dashboard.fusionbyte.tech/register?payment_id=" + response.razorpay_payment_id + "&plan=sale_799";
+                },
+                "theme": { "color": "#0ea5e9" }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUSION BYTE | Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Outfit', 'sans-serif'] }, colors: { primary: '#0ea5e9', secondary: '#8b5cf6', dark: '#050505' } } } }
+    </script>
+    <style>body { background-color: #050505; color: white; } .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }</style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold">FUSION<span class="text-primary">BYTE</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-300 hover:text-white">HOME</a>
+                <a href="services.html" class="text-white font-bold border-b-2 border-primary">SERVICES</a>
+                <a href="products.html" class="text-gray-300 hover:text-white">PRODUCTS</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-16 text-center px-4">
+        <h1 class="text-5xl font-bold mb-4">Our <span class="text-primary">Capabilities</span></h1>
+        <p class="text-gray-400 max-w-xl mx-auto">We don't just write code, we build solutions that sell.</p>
+    </header>
+
+    <section class="pb-24">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8">
+            
+            <div class="glass p-10 rounded-2xl flex gap-6 items-start hover:bg-white/5 transition" data-aos="fade-up">
+                <div class="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center text-3xl">💻</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Custom Web Development</h3>
+                    <p class="text-gray-400 mb-4">We build blazing fast websites using the MERN Stack, Next.js, and Python.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• E-commerce Platforms</li>
+                        <li>• Portfolio Websites</li>
+                        <li>• Landing Pages</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="glass p-10 rounded-2xl flex gap-6 items-start hover:bg-white/5 transition" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center text-3xl">🎮</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Game Development</h3>
+                    <p class="text-gray-400 mb-4">Creating 2D/3D worlds using Unity and Unreal. We handle logic, physics, and assets.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Mobile Games (Android/iOS)</li>
+                        <li>• PC Game Logic</li>
+                        <li>• 3D Asset Design (Blender)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="glass p-10 rounded-2xl flex gap-6 items-start hover:bg-white/5 transition" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 bg-pink-500/20 rounded-xl flex items-center justify-center text-3xl">🚀</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Marketing & Branding</h3>
+                    <p class="text-gray-400 mb-4">We help you find your audience. SEO, Social Media strategy, and Brand Identity.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• SEO Optimization</li>
+                        <li>• Content Strategy</li>
+                        <li>• Logo & Identity Design</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="glass p-10 rounded-2xl flex gap-6 items-start hover:bg-white/5 transition" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-16 h-16 bg-green-500/20 rounded-xl flex items-center justify-center text-3xl">⚙️</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">SaaS Solutions</h3>
+                    <p class="text-gray-400 mb-4">Custom software for businesses. CRM, ERP, and Management tools.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Automation Tools</li>
+                        <li>• Database Management</li>
+                        <li>• API Integration</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+</body>
+</html>
