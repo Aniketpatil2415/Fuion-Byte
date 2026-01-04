@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>FUSION BYTE | The Tech Architects</title>
     <meta name="description" content="Fusion Byte is a premium agency crafting high-performance websites, game development, and SaaS tools like Agency OS.">
-    <meta name="keywords" content="Web Development, Game Dev, SaaS, Fusion Byte, Aniket Patil">
-    
     <meta name="google-site-verification" content="PASTE_YOUR_GOOGLE_CONSOLE_CODE_HERE" />
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PASTE_YOUR_ID_HERE"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-45RH0B2EC7"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
-      gtag('config', 'G-PASTE_YOUR_ID_HERE'); 
+      gtag('config', 'G-45RH0B2EC7'); 
     </script>
 
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -56,26 +51,6 @@
 </head>
 <body class="antialiased font-sans">
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-
-       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAvfwubrdAuJeMb2H4lRPotsbvS4CEhgYk",
-  authDomain: "fusion-byte.firebaseapp.com",
-  projectId: "fusion-byte",
-  storageBucket: "fusion-byte.firebasestorage.app",
-  messagingSenderId: "1059120081400",
-  appId: "1:1059120081400:web:7065d59b4c4c08523fce0d",
-  measurementId: "G-45RH0B2EC7"
-};
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        console.log("Firebase Connected");
-    </script>
-
     <nav class="fixed w-full z-50 glass border-b-0 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -89,6 +64,11 @@ const firebaseConfig = {
                     <a href="about.html" class="text-gray-300 hover:text-white hover:scale-105 transition text-sm font-medium">ABOUT</a>
                     <a href="services.html" class="text-gray-300 hover:text-white hover:scale-105 transition text-sm font-medium">SERVICES</a>
                     <a href="products.html" class="text-gray-300 hover:text-white hover:scale-105 transition text-sm font-medium">PRODUCT</a>
+                    
+                    <a href="https://dashboard.fusionbyte.tech/login" class="text-gray-300 hover:text-white hover:scale-105 transition text-sm font-medium flex items-center gap-2">
+                        <i class="fa-solid fa-right-to-bracket"></i> Login
+                    </a>
+
                     <a href="#contact" class="px-6 py-2 rounded-full bg-white text-dark font-bold hover:bg-primary hover:text-white transition shadow-lg btn-glow">Contact Us</a>
                 </div>
             </div>
@@ -227,24 +207,66 @@ const firebaseConfig = {
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
+    
+    <script type="module">
+        // Import Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        // Initialize AOS
         AOS.init({ duration: 1000, once: true, offset: 100 });
+
+        // YOUR FIREBASE CONFIG (Copied from your input)
+        const firebaseConfig = {
+            apiKey: "AIzaSyAvfwubrdAuJeMb2H4lRPotsbvS4CEhgYk",
+            authDomain: "fusion-byte.firebaseapp.com",
+            projectId: "fusion-byte",
+            storageBucket: "fusion-byte.firebasestorage.app",
+            messagingSenderId: "1059120081400",
+            appId: "1:1059120081400:web:7065d59b4c4c08523fce0d",
+            measurementId: "G-45RH0B2EC7"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        console.log("Firebase Database Ready.");
+
+        // Navbar Scroll Logic
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) { navbar.classList.add('shadow-lg'); navbar.classList.replace('bg-transparent', 'glass'); }
         });
 
-        // 4. RAZORPAY KEY HERE (Is function me key paste kar)
-        function payNow() {
+        // 🚀 GLOBAL PAY FUNCTION (Accessible to HTML Button)
+        window.payNow = function() {
             var options = {
-                "key": "rzp_test_YOUR_ACTUAL_KEY_HERE", // 🔥 PASTE KEY HERE
+                "key": "rzp_test_YOUR_ACTUAL_KEY_HERE", // 🔥 RAZORPAY KEY DALNA MAT BHULNA
                 "amount": "79900", // ₹799
                 "currency": "INR",
                 "name": "Fusion Byte",
-                "description": "Agency OS - New Year Sale Offer",
+                "description": "Agency OS - New Year Sale",
                 "image": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-                "handler": function (response){
-                    alert("Payment Success! Redirecting to Dashboard...");
+                
+                "handler": async function (response){
+                    alert("Payment Verified! Creating Account...");
+
+                    // 1. Save to Firebase (For Admin Panel)
+                    try {
+                        const today = new Date().toISOString().split('T')[0];
+                        await addDoc(collection(db, "users"), {
+                            name: "Sale User",
+                            email: "pending_email_from_dashboard",
+                            plan: "Sale Plan (₹799)",
+                            startDate: today,
+                            paymentId: response.razorpay_payment_id,
+                            status: "Active"
+                        });
+                        console.log("Data saved to Firebase!");
+                    } catch(e) {
+                        console.error("Firebase Error:", e);
+                    }
+
+                    // 2. Redirect to Dashboard (Actual App)
                     window.location.href = "https://dashboard.fusionbyte.tech/register?payment_id=" + response.razorpay_payment_id + "&plan=sale_799";
                 },
                 "theme": { "color": "#0ea5e9" }
